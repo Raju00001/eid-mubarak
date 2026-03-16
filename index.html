@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#030508">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>ঈদ মোবারক ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+Bengali:wght@300;400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ LOADER ═══ -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-ring r3"></div>
+    <div class="loader-ring r2"></div>
+    <div class="loader-ring r1"></div>
+    <div class="loader-moon">🌙</div>
+    <p class="loader-bismillah">بِسْمِ اللّٰهِ</p>
+    <p class="loader-text">Surprise Loading...</p>
+    <div class="loader-progress"><div class="loader-bar" id="lpBar"></div></div>
+  </div>
+</div>
+
+<!-- ═══ CURSOR ═══ -->
+<div class="cursor-core" id="cursorCore"></div>
+<div class="cursor-halo" id="cursorHalo"></div>
+
+<!-- ═══ BG CANVAS ═══ -->
+<canvas id="bgCanvas"></canvas>
+<div class="noise-overlay"></div>
+
+<main>
+
+  <!-- ═══ SECTION 1: HERO ═══ -->
+  <section id="s-hero" class="section">
+    <div class="hero-bg-text">ঈদ</div>
+
+    <div class="ornament-row" data-reveal="fade-down">
+      <div class="orn-wing left"></div>
+      <span class="orn-gem">✦</span>
+      <div class="orn-wing right"></div>
+    </div>
+
+    <div class="moon-wrap" id="moonWrap" data-reveal="scale-in">
+      <div class="mc c3"></div>
+      <div class="mc c2"></div>
+      <div class="mc c1"></div>
+      <div class="morbit or2"></div>
+      <div class="morbit or1"></div>
+      <div class="moon-emoji" id="moonEmoji">🌙</div>
+      <span class="moon-hint" style="font-size: 20px;color: white;">✦ Touch the Moon ✦</span>
+    </div>
+
+    <div class="hero-copy" data-reveal="fade-up">
+      <p class="hero-eyebrow">✦ A Celestial Wish ✦</p>
+      <h1 class="hero-title">EID MUBARAK</h1>
+      <p class="hero-arabic">عيد مبارك</p>
+      <!-- ✏️ নাম পরিবর্তন করো -->
+      <p class="hero-sub"> <em>Jinnat Jahan Mahi</em> <br>Eid Mubarak</p>
+      <div class="hero-div">
+        <span class="hd-l"></span>
+        <span class="hd-gem">◆</span>
+        <span class="hd-r"></span>
+      </div>
+    </div>
+
+    <div class="scroll-ind" data-reveal="fade-up" style="animation-delay:3s">
+      <span class="si-txt">scroll</span>
+      <div class="si-track"><div class="si-pip"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 2: EID CARD ═══ -->
+  <section id="s-card" class="section s-center">
+    <div class="eid-card glass-ultra" data-reveal="fade-up">
+      <div class="card-sheen"></div>
+      <div class="card-toprule"></div>
+      <p class="card-arabic">عيد مبارك</p>
+      <p class="card-trans">— Blessed Celebration —</p>
+      <div class="card-divider">
+        <span class="cdl"></span>
+        <span class="cdd">◆</span>
+        <span class="cdl"></span>
+      </div>
+      <h2 class="card-title">ঈদ মোবারক</h2>
+      <p class="card-tagline">তোমার জীবনে আলো, শান্তি ও অফুরন্ত আনন্দ বর্ষিত হোক</p>
+      <p class="card-icons">🌙 ✨ 🕌 🌹 💫 ⭐</p>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 3: PORTRAIT ═══ -->
+  <section id="s-photo" class="section s-center">
+    <div class="portrait-scene" data-reveal="fade-up">
+      <div class="portrait-ambient"></div>
+
+      <div class="fd fd1">✦</div>
+      <div class="fd fd2">🌙</div>
+      <div class="fd fd3">🌹</div>
+      <div class="fd fd4">✨</div>
+      <div class="fd fd5">◆</div>
+
+      <div class="portrait-frame" id="portraitFrame">
+        <img class="photo-img" src="mahi.jpeg" alt="">
+          <input type="file" id="photoInput" accept="image/*" style="display:none">
+          <div class="photo-gloss"></div>
+
+          <!-- SVG corner frame -->
+          <svg class="frame-svg" viewBox="0 0 340 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 46 L2 2 L46 2" stroke="rgba(200,169,110,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M294 2 L338 2 L338 46" stroke="rgba(200,169,110,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M2 414 L2 458 L46 458" stroke="rgba(200,169,110,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M294 458 L338 458 L338 414" stroke="rgba(200,169,110,0.8)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="170" cy="2" r="4" fill="rgba(200,169,110,0.65)"/>
+            <line x1="138" y1="2" x2="162" y2="2" stroke="rgba(200,169,110,0.25)" stroke-width="1"/>
+            <line x1="178" y1="2" x2="202" y2="2" stroke="rgba(200,169,110,0.25)" stroke-width="1"/>
+            <circle cx="170" cy="458" r="3.5" fill="rgba(200,169,110,0.45)"/>
+            <line x1="138" y1="458" x2="162" y2="458" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+            <line x1="178" y1="458" x2="202" y2="458" stroke="rgba(200,169,110,0.15)" stroke-width="1"/>
+            <rect x="12" y="12" width="316" height="436" rx="8" stroke="rgba(200,169,110,0.1)" stroke-width="1"/>
+            <path d="M155 14 Q170 8 185 14" stroke="rgba(200,169,110,0.35)" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="portrait-nametag">
+          <!-- ✏️ নাম পরিবর্তন করো -->
+          <p class="pnt-name">Jinnat Jahan Mahi</p>
+          <div class="pnt-rule"></div>
+          <p class="pnt-sub">eid mubarak ✨</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="portrait-caption" data-reveal="fade-up">
+      <p class="pc-for"></p>
+      <!-- ✏️ নাম পরিবর্তন করো -->
+      <p class="pc-name">Mahi</p>
+      <div class="pc-rule"></div>
+      <p class="pc-tag">Light</p>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 4: PHILOSOPHY QUOTES ═══ -->
+  <section id="s-quotes" class="section">
+    <div class="sec-header" data-reveal="fade-up">
+      <p class="sh-eye">✦  ✦</p>
+      <h3 class="sh-title">Some True Speech</h3>
+      <p class="sh-sub">From the Inner soul</p>
+    </div>
+
+    <div class="quotes-grid">
+
+      <div class="qt-card glass-dark qt-large" data-qcard>
+        <span class="qt-num">01</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">যে মানুষ নিজের বুদ্ধিমত্তাকে সৌন্দর্যের মতো বহন করে — সে ঘরে প্রবেশ করলে আলো বাড়ে না, বরং ঘরটি সত্যিকারের আলো কী তা প্রথমবার বুঝতে পারে।</p>
+        <p class="qt-auth">— Friedrich Nietzsche</p>
+        <div class="qt-rule"></div>
+      </div>
+
+      <div class="qt-card glass-dark" data-qcard>
+        <span class="qt-num">02</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">কিছু মানুষ আছে যাদের উপস্থিতিতেই পরিবেশ পাল্টে যায়। তুমি সেই বিরল মানুষদের একজন।</p>
+        <p class="qt-auth">— Carl Jung</p>
+        <div class="qt-rule"></div>
+      </div>
+
+      <div class="qt-card glass-dark" data-qcard>
+        <span class="qt-num">03</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">সৌন্দর্য সবার থাকে, কিন্তু যে মানুষ সুন্দর এবং গভীরভাবে চিন্তা করতে পারে — সে পৃথিবীর সবচেয়ে বিরল উপহার।</p>
+        <p class="qt-auth">— Simone de Beauvoir</p>
+        <div class="qt-rule"></div>
+      </div>
+
+      <div class="qt-card glass-dark qt-wide" data-qcard>
+        <span class="qt-num">04</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">কিছু মানুষ এমন হয় যাদের কাছে থাকলে মনে হয় — এই মুহূর্তটি অন্যরকম, এই মানুষটি অন্যরকম। তারা সেটা বোঝার চেষ্টাও করে না। এটাই তাদের সবচেয়ে বড় ক্ষমতা।</p>
+        <p class="qt-auth">— Albert Camus</p>
+        <div class="qt-rule"></div>
+      </div>
+
+      <div class="qt-card glass-dark" data-qcard>
+        <span class="qt-num">05</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">যে নারী নিজের মনকে ভালোবাসে, সে পৃথিবীকে ভয় পায় না — এবং পৃথিবী তাকে ভুলতে পারে না।</p>
+        <p class="qt-auth">— Khalil Gibran</p>
+        <div class="qt-rule"></div>
+      </div>
+
+      <div class="qt-card glass-dark" data-qcard>
+        <span class="qt-num">06</span>
+        <span class="qt-mark">"</span>
+        <p class="qt-txt">বিশ্বের সবচেয়ে দুর্লভ সমন্বয় হলো — একটি তীক্ষ্ণ বুদ্ধি এবং একটি কোমল হৃদয়। তুমি সেই সমন্বয়।</p>
+        <p class="qt-auth">— Rumi</p>
+        <div class="qt-rule"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 5: THE LETTER ═══ -->
+  <section id="s-letter" class="section s-center">
+    <div class="letter-wrap" data-reveal="fade-up">
+
+      <div class="letter-header">
+        <div class="lh-icon">💌</div>
+        <p class="lh-label">✦ একটি চিঠি — শুভাকাঙ্ক্ষীর  থেকে ✦</p>
+      </div>
+
+      <div class="letter-card glass-parchment">
+        <div class="lc-toprule"></div>
+        <div class="lc-watermark">🌙</div>
+        <div class="lc-bigq">"</div>
+
+        <!-- ✏️ নাম পরিবর্তন করো -->
+        <p class="letter-to"><span class="lt-name">Mahi</span>,</p>
+        <div class="lt-underline"></div>
+
+        <p class="letter-p lp1">
+          পৃথিবীতে কিছু মানুষ আছে যারা নিজের অজান্তেই অন্যের জীবনে
+          <span class="lhi">গভীর ছাপ</span> রেখে যায়। তারা বড় কিছু করে না —
+          শুধু তারা যেভাবে হাঁটে, যেভাবে চিন্তা করে, যেভাবে কথা বলে —
+          সেটাই যথেষ্ট। তুমি সেই মানুষদের একজন।
+        </p>
+
+        <p class="letter-p lp2">
+          I wish, <span class="lrose">তোমার এই গুণগুলো</span> আছে, শুধু তোমার নিজের জন্য নয়, এটা তোমার চারপাশের মানুষের জন্যও একটা অনুপ্রেরণা।
+        </p>
+
+        <div class="letter-div">
+          <div class="ldl"></div><span>🌹</span><div class="ldl"></div>
+        </div>
+
+        <p class="letter-p lp3">
+           তুমি যেখানে থাকো,
+          সেখানকার পরিবেশ একটু <span class="lhi">ভিন্ন হয়ে যায়</span>।
+          এটা অনুভব করা যায়, ব্যাখ্যা করা যায় না। এমন মানুষ বিরল।
+        </p>
+
+        <p class="letter-p lp4">
+          এই ঈদে তোমার জন্য দোয়া হলো — তুমি সুস্থ থাকো,
+          তোমার জীবনের প্রতিটি <span class="lrose">স্বপ্ন পূরণ হোক</span>,
+          এবং তুমি যে বিশেষ আলোটা বহন করো — সেটা যেন কখনো নিভে না যায়।
+          আমি সবসময়  একজন শুভাকাঙ্ক্ষী হিসেবে, সবসময় তোমার পাশে আছি — দূরে হলেও।
+        </p>
+
+        <div class="letter-from" data-lf>
+          <p class="lf-label">তোমার শুভাকাঙ্ক্ষী</p>
+          <!-- ✏️ তোমার নাম পরিবর্তন করো -->
+          <p class="lf-name">Raju🌙</p>
+          <span class="lf-seal">✦</span>
+        </div>
+
+        <div class="lc-bottomrule"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 6: DUAS ═══ -->
+  <section id="s-duas" class="section">
+    <div class="sec-header" data-reveal="fade-up">
+      <p class="sh-eye">✦ ঈদের দোয়া ✦</p>
+      <h3 class="sh-title">তোমার জন্য প্রার্থনা</h3>
+    </div>
+
+    <div class="duas-grid">
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">☀️</span>
+        <h4 class="dc-title">সুখ ও প্রশান্তি</h4>
+        <p class="dc-txt">তোমার প্রতিটি সকাল যেন নতুন আশা নিয়ে আসে, প্রতিটি রাত কৃতজ্ঞতায় পূর্ণ হয়।</p>
+      </div>
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">🌙</span>
+        <h4 class="dc-title">রহমত ও বরকত</h4>
+        <p class="dc-txt">আল্লাহর অশেষ রহমত তোমার জীবনের প্রতিটি পথে আলো হয়ে থাকুক।</p>
+      </div>
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">🌹</span>
+        <h4 class="dc-title">সুরক্ষা ও সুস্বাস্থ্য</h4>
+        <p class="dc-txt">তুমি সুস্থ থাকো, নিরাপদ থাকো — তোমার ওপর কোনো কষ্ট না আসুক।</p>
+      </div>
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">⭐</span>
+        <h4 class="dc-title">স্বপ্ন ও সাফল্য</h4>
+        <p class="dc-txt">তোমার সমস্ত স্বপ্ন যেন বাস্তব হয় — একে একে, নিজের সময়ে।</p>
+      </div>
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">💫</span>
+        <h4 class="dc-title">জ্ঞান ও প্রজ্ঞা</h4>
+        <p class="dc-txt">তোমার মেধা আরো শাণিত হোক — তুমি যা অর্জন করতে চাও, সব পাও।</p>
+      </div>
+      <div class="dua-card glass-dark" data-dcard>
+        <div class="dc-glow"></div>
+        <span class="dc-icon">🕌</span>
+        <h4 class="dc-title">ঈমান ও শুকর</h4>
+        <p class="dc-txt">তোমার হৃদয়ে সবসময় আল্লাহর জন্য কৃতজ্ঞতা থাকুক — এটাই সবচেয়ে বড় ধন।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 7: POEM ═══ -->
+  <section id="s-poem" class="section s-center">
+    <div class="poem-wrap" data-reveal="fade-up">
+      <p class="poem-eye">✦ শেষ কথা ✦</p>
+
+      <div class="poem-body">
+        <span class="pl pl-silver" data-pline>ঈদের চাঁদ উঠলে,</span>
+        <span class="pl pl-rose" data-pline>রাতগুলো যেন একটু নরম হয়ে যায়।।</span>
+        <span class="pl pl-silver" data-pline>এই সময়টায় মনে হয়,</span>
+        <span class="pl pl-gold" data-pline>কিছু মানুষ আছে</span>
+        <span class="pl pl-spacer" data-pline>&nbsp;</span>
+        <span class="pl pl-silver" data-pline>যাদের ভেতরের সৌন্দর্য,</span>
+        <span class="pl pl-rose" data-pline>শব্দে বোঝানো যায় না।।</span>
+        <span class="pl pl-gold" data-pline>তারা খুব সাধারণভাবেই থাকে,
+তবুও তাদের মধ্যে এক ধরনের আলাদা শান্তি থাকে।
+
+<BR>EID MUBARAK 🌙</BR></span>
+      </div>
+
+      <div class="poem-seal" data-reveal="fade-up">
+        <div class="ps-moon">🌙</div>
+        <div class="ps-row">
+          <div class="ps-line"></div>
+          <p class="ps-txt">Eid Mubarak — always & forever</p>
+          <div class="ps-line"></div>
+        </div>
+        <p class="ps-arabic">عيد مبارك</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
